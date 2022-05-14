@@ -86,4 +86,15 @@ public class EmployeeController {
         employeeService.page(pageInfo,qw);
         return R.success(pageInfo);
     }
+
+    @PutMapping
+    public R<String> updateFn(HttpServletRequest request,@RequestBody Employee employee) {
+
+        Long empId = (Long) request.getSession().getAttribute("employee");
+        employee.setUpdateUser(empId);
+        employee.setUpdateTime(LocalDateTime.now());
+        employeeService.updateById(employee);
+
+        return R.success("员工信息修改成功～");
+    }
 }
