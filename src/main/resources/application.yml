@@ -17,3 +17,6 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: ASSIGN_ID
+
+reggieDemo: # 指定一个路径为了上传文件
+  path: /Users/madenghui/Documents/javaAssist/rubbishForTes/
